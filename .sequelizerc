@@ -1,0 +1,14 @@
+require('dotenv').config();
+const path = require('path');
+
+const { env } = process;
+
+const option = {
+  'config': path.resolve('config', 'sql.js'),
+  'models-path': path.resolve('./src/models'),
+  'seeders-path': path.resolve('seeders'),
+  'migrations-path': path.resolve('migrations'),
+  'debug': env.NODE_ENV !== 'production'
+}
+
+module.exports = option;
